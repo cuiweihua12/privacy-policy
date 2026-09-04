@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>账本之星 隐私政策</title>
+<style>
+  :root {
+    --bg: #f5f6f8;
+    --card: #ffffff;
+    --primary: #2f6fed;
+    --text: #1f2329;
+    --sub: #6b7280;
+    --line: #e5e7eb;
+    --warn-bg: #fff7e6;
+    --warn-bd: #ffd591;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.75;
+    font-size: 16px;
+  }
+  .wrap { max-width: 800px; margin: 0 auto; padding: 24px 18px 64px; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 28px 26px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  }
+  header { text-align: center; margin-bottom: 8px; }
+  h1 { font-size: 24px; margin: 0 0 6px; }
+  .meta { color: var(--sub); font-size: 14px; margin-bottom: 4px; }
+  h2 {
+    font-size: 18px;
+    margin: 32px 0 12px;
+    padding-left: 11px;
+    border-left: 4px solid var(--primary);
+  }
+  h3 { font-size: 15px; margin: 20px 0 8px; color: var(--text); }
+  p { margin: 10px 0; }
+  ul { padding-left: 22px; margin: 10px 0; }
+  li { margin: 6px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+  th, td { border: 1px solid var(--line); padding: 10px 12px; text-align: left; vertical-align: top; }
+  th { background: #f0f4ff; color: var(--text); font-weight: 600; }
+  td code, p code { background: #eef2ff; padding: 1px 6px; border-radius: 4px; font-size: 13px; }
+  .note {
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-bd);
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin: 16px 0;
+    font-size: 14px;
+  }
+  .placeholder { color: #c2410c; font-weight: 600; }
+  .summary {
+    background: linear-gradient(135deg, #eef4ff, #f5f8ff);
+    border: 1px solid #c7d7ff;
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-top: 28px;
+    font-weight: 600;
+  }
+  a { color: var(--primary); }
+  footer { text-align: center; color: var(--sub); font-size: 13px; margin-top: 28px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="card">
+    <header>
+      <h1>账本之星 隐私政策</h1>
+      <div class="meta">生效日期：2026-09-04</div>
+      <div class="meta">应用名称：账本之星（Ledger Star）　开发者：blithesome</div>
+      <div class="meta">包名：com.blithesome.ledgerstar</div>
+    </header>
+
+    <h2>一、引言</h2>
+    <p>「账本之星」是一款<strong>纯本地</strong>的记账工具。开发者不运营任何服务器，应用不包含任何网络请求代码，你的账目数据全程保存在你自己的设备上。</p>
+    <p>本政策说明应用如何处理（事实上是"不处理"）你的信息。</p>
+
+    <h2>二、我们收集哪些信息</h2>
+    <p><strong>我们不收集任何个人信息。</strong></p>
+    <ul>
+      <li>不收集姓名、手机号、邮箱、通讯录、位置、设备标识符等任何个人数据</li>
+      <li>应用内没有任何数据上传逻辑，不具备向服务器发送数据的能力</li>
+      <li>不需要注册或登录，没有账号体系</li>
+      <li>不使用任何第三方统计、广告或崩溃上报 SDK</li>
+    </ul>
+    <p>你录入的每一笔账目（金额、分类、备注、日期）都只写入设备本地数据库，开发者无法访问，也无法通过任何途径获取。</p>
+
+    <h2>三、权限使用说明</h2>
+    <p>应用仅申请以下两项系统权限，均为"使用时授权"。你可以随时在系统设置中关闭，关闭后对应功能不可用，但不影响其他功能。</p>
+    <table>
+      <thead>
+        <tr><th>权限</th><th>用途</th><th>是否必需</th><th>数据处理方式</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>麦克风（<code>ohos.permission.MICROPHONE</code>）</td>
+          <td>「语音记账」：识别你说的一句话（如"午饭花了35元"）并转成文字记账</td>
+          <td>否</td>
+          <td>仅在您点击麦克风期间采集；识别由系统语音识别能力完成，<strong>应用不保存、不上传录音音频</strong>；识别结果仅用于填充记账表单</td>
+        </tr>
+        <tr>
+          <td>生物认证（<code>ohos.permission.ACCESS_BIOMETRIC</code>）</td>
+          <td>「应用锁」：开启后可用指纹 / 人脸快速解锁应用</td>
+          <td>否</td>
+          <td>生物特征由系统 TEE 安全环境管理，<strong>应用仅获取"通过 / 失败"结果，不接触、不存储任何生物特征数据</strong></td>
+        </tr>
+      </tbody>
+    </table>
+    <p>未开启相关功能时，应用不会申请或使用上述权限。</p>
+
+    <h2>四、语音与短信记账的处理方式</h2>
+    <p><strong>语音记账</strong>：语音识别通过 HarmonyOS 系统提供的语音识别能力完成。当你点击麦克风说话时：</p>
+    <ul>
+      <li>音频仅用于当次识别，识别结束后立即释放</li>
+      <li>应用不保存录音文件，不上传音频到任何服务器</li>
+      <li>识别出的文字经本地解析后填入记账表单，<strong>由你确认后才会保存</strong></li>
+    </ul>
+    <p><strong>短信记账</strong>：应用在<strong>本地</strong>解析你主动粘贴或分享过来的银行动账短信文本，提取金额、商户、日期等字段。</p>
+    <ul>
+      <li>应用<strong>不申请、也不具备</strong>读取手机短信的权限（HarmonyOS 中短信读取为系统级受限权限，三方应用无法获取）</li>
+      <li>短信内容不会离开你的设备，不上传、不留存原始短信</li>
+    </ul>
+
+    <h2>五、数据存储与安全</h2>
+    <ul>
+      <li><strong>存储位置</strong>：全部数据保存在设备本地数据库中（应用沙箱目录），不上传云端</li>
+      <li><strong>应用锁密码</strong>：只保存 <code>SHA-256("ledger_star:" + 密码)</code> 摘要，<strong>不保存明文密码</strong>；忘记密码可通过应用内"忘记密码"清除本地数据后重置</li>
+      <li><strong>生物特征</strong>：由系统安全环境（TEE）保管，应用不接触</li>
+      <li><strong>数据导出</strong>：可在「设置 → 数据管理 → 导出备份」将数据导出为 JSON 文件，保存到你自己指定的位置</li>
+      <li><strong>数据清除</strong>：「设置 → 数据管理」提供清空账目、清除全部本地数据等操作，执行后数据不可恢复</li>
+    </ul>
+    <p class="note">请注意：<strong>卸载应用会删除全部本地数据</strong>，且不同签名版本的安装包之间无法直接继承数据。建议在卸载或换机前先使用「导出备份」。</p>
+
+    <h2>六、信息共享与披露</h2>
+    <p>我们不向任何第三方共享、出售或披露你的数据——因为开发者从一开始就拿不到你的数据。</p>
+
+    <h2>七、第三方服务</h2>
+    <p>应用不包含任何第三方 SDK，不集成广告、统计、推送、支付等第三方服务。</p>
+
+    <h2>八、你的权利</h2>
+    <ul>
+      <li><strong>访问与导出</strong>：随时在应用内查看全部账目，或导出为 JSON 文件</li>
+      <li><strong>删除</strong>：在应用内一键清空账目或清除全部本地数据；卸载应用即彻底删除</li>
+      <li><strong>关闭权限</strong>：在系统设置中随时关闭麦克风或生物认证权限</li>
+      <li><strong>关闭应用锁</strong>：在「设置 → 安全与隐私」中随时关闭</li>
+    </ul>
+
+    <h2>九、未成年人保护</h2>
+    <p>应用不面向未满 14 周岁儿童定向提供服务，也不收集任何未成年人信息。若未成年人使用，建议在监护人指导下进行。</p>
+
+    <h2>十、政策更新</h2>
+    <p>如本政策发生变更，我们会在本页面更新内容。若变更涉及数据处理方式的实质调整，会通过应用内提示告知你。</p>
+
+    <h2>十一、联系我们</h2>
+    <p>如对本政策有疑问，可通过以下方式联系：</p>
+    <ul>
+      <li>邮箱：<span class="placeholder">{{请填写你的联系邮箱}}</span></li>
+      <li>备案说明：本应用为<strong>纯本地单机应用</strong>，运行时不连接任何服务器、不上传任何数据，依据华为应用市场规则属「单机离线应用」，<strong>无需办理工信部 APP 备案</strong>（如后续版本新增联网能力，须另行完成备案后在此补充备案号）。</li>
+    </ul>
+
+    <div class="summary">一句话总结：你的账本只属于你。这个应用没有服务器、没有账号、没有上传，开发者看不到你的任何一笔账。</div>
+
+    <footer>本页面由账本之星开发者提供，作为应用隐私政策的公开访问地址。</footer>
+  </div>
+</div>
+</body>
+</html>
